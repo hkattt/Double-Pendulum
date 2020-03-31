@@ -45,10 +45,10 @@ class Pendulum():
         pg.draw.lines(background, BLACK, False, [(self.stationary_x, self.stationary_y), (self.x1, self.y1)], 2)
         pg.draw.lines(background, BLACK, False, [(self.x1, self.y1), (self.x2, self.y2)], 2)
         # masses
-        pg.draw.circle(background, BLACK, (int(self.x1), int(self.y1)), int(self.radius) + 2)
-        pg.draw.circle(background, GREY, (int(self.x1), int(self.y1)), int(self.radius))
-        pg.draw.circle(background, BLACK, (int(self.x2), int(self.y2)), int(self.radius) + 2)
-        pg.draw.circle(background, GREY, (int(self.x2), int(self.y2)), int(self.radius))
+        pg.draw.circle(background, BLACK, (int(self.x1), int(self.y1)), int(self.m1) + 2)
+        pg.draw.circle(background, GREY, (int(self.x1), int(self.y1)), int(self.m1))
+        pg.draw.circle(background, BLACK, (int(self.x2), int(self.y2)), int(self.m2) + 2)
+        pg.draw.circle(background, GREY, (int(self.x2), int(self.y2)), int(self.m2))
 
     
     def calc_pos(self):
@@ -98,7 +98,7 @@ class Pendulum():
         self.a2_a = (com1 * (com2 + com3 + com4)) / den
 
 # creates a pendulum object
-pendulum = Pendulum(5.0, 5.0, 150.0, 155.0, math.pi / 2, math.pi / 2)
+pendulum = Pendulum(10.0, 10.0, 150.0, 155.0, math.pi / 2, math.pi / 2)
 # calculates its initial position
 pendulum.calc_pos()
 
