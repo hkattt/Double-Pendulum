@@ -1,3 +1,5 @@
+# Double Pendulum Simulation: Inspired by The Coding Train's Double Pendulum Code Challenge
+
 # import modules
 import pygame as pg
 import math
