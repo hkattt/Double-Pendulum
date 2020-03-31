@@ -3,6 +3,7 @@ import pygame as pg
 import math
 import time
 
+# display window dimensions
 WIDTH, HEIGHT = 500, 500
 
 # colours
@@ -11,10 +12,11 @@ BLACK = (0, 0, 0)
 RED = (255, 0, 0)
 GREY = (200, 200, 200)
 
+# gravity
+g = 1.0
+
 pg.init()
 background = pg.display.set_mode((WIDTH, HEIGHT))
-
-g = 1.0
 
 class Pendulum():
     def __init__(self, m1, m2, length1, length2, a1, a2):
@@ -44,7 +46,7 @@ class Pendulum():
         # strings
         pg.draw.lines(background, BLACK, False, [(self.stationary_x, self.stationary_y), (self.x1, self.y1)], 2)
         pg.draw.lines(background, BLACK, False, [(self.x1, self.y1), (self.x2, self.y2)], 2)
-        # masses
+        # masses (drawn as circles)
         pg.draw.circle(background, BLACK, (int(self.x1), int(self.y1)), int(self.m1) + 2)
         pg.draw.circle(background, GREY, (int(self.x1), int(self.y1)), int(self.m1))
         pg.draw.circle(background, BLACK, (int(self.x2), int(self.y2)), int(self.m2) + 2)
