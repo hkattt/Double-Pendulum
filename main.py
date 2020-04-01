@@ -129,6 +129,15 @@ class Pendulum():
         # combining all the componenets to calculate the second angular acceleration
         self.a2_a = (com1 * (com2 + com3 + com4)) / den
 
+    def reset(self):
+        """ Resest the pendulums position back to still """
+        # reset angular acceleration
+        self.a1_a, self.a2_a = 0.0, 0.0
+        # reset angular velocity
+        self.a1_v, self.a2_v = 0.0, 0.0
+        # rest angle
+        self.a1, self.a2 = 0.0, 0.0
+
 # creates a pendulum object
 pendulum = Pendulum(10.0, 10.0, 150.0, 150.0, 0, 0)
 # calculates its initial position
@@ -165,6 +174,10 @@ while running:
                 if x < pendulum.x2 + pendulum.m2 and x > pendulum.x2 - pendulum.m2:
                     if y > pendulum.y2 - pendulum.m2 and y < pendulum.y2 + pendulum.m2:
                         pendulum.m2_selected = True
+
+        elif event.type == pg.KEYDOWN:
+            if event.key == pg.K_r:
+                pendulum.reset()
 
     # draws the pendulum
     background.fill(WHITE)
