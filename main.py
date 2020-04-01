@@ -19,6 +19,7 @@ g = 1.0
 
 pg.init()
 background = pg.display.set_mode((WIDTH, HEIGHT))
+pg.display.set_caption("Double Pendulum Simulation")
 
 class Pendulum():
     def __init__(self, m1, m2, length1, length2, a1, a2):
