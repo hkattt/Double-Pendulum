@@ -139,7 +139,7 @@ class Pendulum():
         self.a1, self.a2 = 0.0, 0.0
 
 # creates a pendulum object
-pendulum = Pendulum(10.0, 10.0, 150.0, 150.0, 0, 0)
+pendulum = Pendulum(10.0, 10.0, 150.0, 150.0, math.pi / 2, math.pi / 2)
 # calculates its initial position
 pendulum.calc_pos()
 
